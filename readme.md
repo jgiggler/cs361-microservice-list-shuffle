@@ -17,7 +17,7 @@ Make sure that the message you are sending is a JSON object with the list associ
 An example in python using the json library provided:
 ![alt text](image-1.png)
 
-An example function to send a list to the microservice is provided in Python. Using the client function you pass a list and an optional seed. 
+An example function to send a list to the microservice is provided in Python. Using the randomize function you pass a list and an optional seed. 
 
 **Example: randomize(list, seed) or randomize(list)**
 
