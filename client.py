@@ -1,4 +1,4 @@
-#   client in Python
+#   randomize in Python
 #   Connects REQ socket to tcp://localhost:5555
 #   
 #
@@ -7,7 +7,7 @@ import zmq
 import json
 context = zmq.Context()
 
-def client(list, seed=None):
+def randomize(list, seed=None):
     #  Socket to talk to server
     print("Connecting to hello world server…")
     socket = context.socket(zmq.REQ)
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     while True:
         request = input("Shuffle list? y or n\n")
         if request == "y":
-            client(list)
+            randomize(list)
         if request == "n":
             break
         

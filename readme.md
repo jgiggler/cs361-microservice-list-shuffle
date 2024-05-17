@@ -21,30 +21,7 @@ An example function to send a list to the microservice is provided in Python. Us
 
 **Example: randomize(list, seed) or randomize(list)**
 
-import zmq
-import json
-context = zmq.Context()
-
-def randomize(list, seed=None):
-    #  Socket to talk to server
-    print("Connecting to hello world server…")
-    socket = context.socket(zmq.REQ)
-    socket.connect("tcp://localhost:5555")
-
-    data = {'list': list}
-    #create message with seed if present
-    if seed is not None:
-        data['seed'] = seed
-    print("data:", data)
-    message = json.dumps(data)
-    print(f"Sending request: {message} …")
-    socket.send_string(message)
-
-    #  Get the reply.
-    message = socket.recv_string()
-    response = json.loads(message)
-    print(f"Received reply: {response} ")
-
+![alt text](image-3.png)
 
 In order to receive data from the microservice use the associated libraries socket receiving string command. In the instance of receiving data through pythons zmq library it would be: **socket.recv_string()** command.
 
